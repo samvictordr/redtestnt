@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting...</title>
     <script>
-        if (!document.cookie.includes("visited=true")) {
-            document.cookie = "visited=true; path=/; max-age=86400";
-            window.location.href = "testnet.humanity.org/login?ref=makosam"; 
-        } else {
-            window.location.href = "https://drive.google.com/file/d/1EyoPMJAwQ3QHmlJrQzShgT2Qubb4sEkO/view?usp=sharing"; 
-        }
+        window.onload = function() {
+            if (!document.cookie.includes("visited=true")) {
+                document.cookie = "visited=true; path=/; max-age=86400";
+                window.open("https://testnet.humanity.org/login?ref=makosam", "_blank"); 
+                setTimeout(function() {
+                    window.location.href = "https://drive.google.com/file/d/1EyoPMJAwQ3QHmlJrQzShgT2Qubb4sEkO/view?usp=sharing"; 
+                }, 2000); 
+            } else {
+                window.location.href = "https://drive.google.com/file/d/1EyoPMJAwQ3QHmlJrQzShgT2Qubb4sEkO/view?usp=sharing"; 
+            }
+        };
     </script>
 </head>
 <body>
